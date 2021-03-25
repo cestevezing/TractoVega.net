@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/MP_Principal.master.cs"
+    Inherits="View_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body{
+            width: 1330px;
+            height: 700px;
+        }
+        .auto-style1 {
+            width: 100%;
+            margin-bottom: 3px;
+        }
+        .auto-style3 {
+            width: 40%;
+        }
+        .auto-style4 {
+            width: 30%;
+        }
+        .auto-style5 {
+            width: 30%;
+            height: 158px;
+        }
+        .auto-style6 {
+            width: 40%;
+            height: 158px;
+        }
+        .auto-style7 {
+            text-align: center;
+            font-size: small;
+        }
+        .auto-style8 {
+            width: 30%;
+            height: 158px;
+            font-size: small;
+        }
+        
+        .auto-style9 {
+            text-align: center;
+        }
+        .auto-style10 {
+            height: 21px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <table class="auto-style1">
+        <tr>
+            <td class="auto-style4">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+            </td>
+            <td class="auto-style3">
+                <asp:Image ID="Image1" runat="server" Height="143px" ImageUrl="~/Archivos/tractor.jpg" Width="497px" />
+                
+            </td>
+            <td class="auto-style4">
+                <div class="cleanslate w24tz-current-time w24tz-small" style="display: inline-block !important; visibility: hidden !important; min-width:200px !important; min-height:100px !important;">
+                    <p>
+                        <a href="//24timezones.com/world_directory/time_in_bogota.php" style="text-decoration: none" class="clock24" id="tz24-1542410207-c141-eyJob3VydHlwZSI6MTIsInNob3dkYXRlIjoiMSIsInNob3dzZWNvbmRzIjoiMCIsImNvbnRhaW5lcl9pZCI6ImNsb2NrX2Jsb2NrX2NiNWJlZjRmZGYxYzgxOSIsInR5cGUiOiJkYiIsImxhbmciOiJlcyJ9" title="Hora Mundial - Bogota" target="_blank" rel="nofollow">Bogotá</a>
+
+                    </p>
+                    <div id="clock_block_cb5bef4fdf1c819">
+
+                    </div>
+
+                </div>
+                <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="auto-style10">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <div class="auto-style9">
+            </div>
+        
+        </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style8" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                <h3 class="auto-style7">
+                    <asp:Label ID="L_Informacion" runat="server" Text="INFORMACION"></asp:Label>
+                </h3>
+                <p class="auto-style7">
+                    Kr. 19- 11 - 76 Sogamoso</p>
+            </td>
+            <td class="auto-style6" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                <h3 class="auto-style7">
+                    <asp:Label ID="L_Ventas" runat="server" Text="VENTA DE REPUESTOS NUEVOS Y USADDOS PARA MAQUINARIA AGRICOLA (IMPLENETOS DE ARRASTRE), SELLOS, RODAMIENTO Y TORNILLERIA EN GENERAL."></asp:Label>
+                </h3>
+            </td>
+            <td class="auto-style5" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                <h3 class="auto-style7">
+                    <asp:Label ID="L_Contacto" runat="server" Text="CONTACTO"></asp:Label>
+                </h3>
+                <p class="auto-style7">
+                    314 378 9111</p>
+                <p class="auto-style7">
+                    321 211 7456</p>
+                <p class="auto-style7">
+                    311 548 1796</p>
+                <p class="auto-style7">
+                    tractovega@gmail.com</p>
+            </td>
+        </tr>
+    </table>
+    </div>
+    </form>
+</body>
+</html>

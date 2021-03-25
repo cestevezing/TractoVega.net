@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/View/MP_Principal.master" AutoEventWireup="true"
+    CodeFile="~/Controller/MP_Usuario.master.cs" Inherits="View_Usuario_MP_Usuario" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .auto-style11 {
+            width: 100%;
+        }
+        .auto-style12 {
+            width: 25%;
+        text-align: center;
+    }
+        .auto-style13 {
+            width: 50%;
+        text-align: center;
+    }
+        .auto-style14 {
+            width: 25%;
+            height: 30px;
+        }
+        .auto-style15 {
+            width: 50%;
+            height: 30px;
+        }
+        .auto-style16 {
+            height: 30px;
+        }
+        .auto-style17 {
+            width: 25%;
+            height: 30px;
+            text-align: center;
+        }
+        .auto-style18 {
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <table class="auto-style11">
+        <tr>
+            <td class="auto-style14"></td>
+            <td class="auto-style15">
+                <asp:Menu ID="Menu_Usuario" runat="server" BackColor="#FF6600" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="X-Large" ForeColor="#990000" Orientation="Horizontal" StaticSubMenuIndent="10px">
+                    <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#FFFBD6" />
+                    <DynamicSelectedStyle BackColor="#FFCC66" />
+                    <Items>
+                        <asp:MenuItem Text="Inicio" Value="Inicio" NavigateUrl="~/View/Inicio_Usuario.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Empresa" Value="Empresa" NavigateUrl="~/View/Empresa_Usuario.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Catalogo" Value="Catalogo" NavigateUrl="~/View/Catalogo_Usuario.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Pedidos" Value="Pedidos" NavigateUrl="~/View/Pedidos_Usuario.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Carrito" Value="Carrito" NavigateUrl="~/View/Carrito_Usuario.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Perfil" Value="Perfil" NavigateUrl="~/View/Perfil_Usuario.aspx"></asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#FFCC66" />
+                </asp:Menu>
+            </td>
+            <td class="auto-style16">
+                <div class="auto-style9">
+                    <asp:Button ID="BTN_Salir" runat="server" BackColor="#FF6600" BorderColor="#FF6600" ForeColor="White" Text="Salir" OnClick="Button1_Click" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style17">
+                <asp:ImageButton ID="IB_Tato1" runat="server" Height="200px" OnClick="IB_Tato1_Click" Width="200px" ImageUrl="~/Archivos/tractorEspanol.jpg"/>
+                <br />
+                <asp:LinkButton ID="LB_Tato1" runat="server" ForeColor="#FF6600" OnClick="LB_Tato1_Click" OnClientClick="IB_Tato1_Click">Ver mas</asp:LinkButton>
+                <br />
+                <br />
+                <asp:ImageButton ID="IB_Plato1" runat="server" Height="200px" OnClick="IB_Plato1_Click" Width="200px" />
+                <br />
+                <asp:LinkButton ID="LB_Plato1" runat="server" ForeColor="#FF6600" OnClick="LB_Plato1_Click">Ver mas</asp:LinkButton>
+            </td>
+            <td class="auto-style15">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="auto-style18">
+                <asp:ImageButton ID="IB_Tato2" runat="server" Height="200px" OnClick="IB_Tato2_Click" OnClientClick="IB_Tato1_Click" Width="200px" />
+                <br />
+                <asp:LinkButton ID="LB_Tato2" runat="server" ForeColor="#FF6600" OnClick="LB_Tato2_Click" OnClientClick="IB_Tato1_Click">Ver mas</asp:LinkButton>
+                <br />
+                <br />
+                <asp:ImageButton ID="IB_Plato2" runat="server" Height="200px" OnClick="IB_Plato2_Click" Width="200px" />
+                <br />
+                <asp:LinkButton ID="LB_Plato" runat="server" ForeColor="#FF6600" OnClick="LB_Plato_Click">Ver mas</asp:LinkButton>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style12">
+                <br />
+                <br />
+            </td>
+            <td class="auto-style13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br />
+                <br />
+            </td>
+            <td class="auto-style9">
+                <br />
+                <br />
+            </td>
+        </tr>
+    </table>
+</asp:Content>
+

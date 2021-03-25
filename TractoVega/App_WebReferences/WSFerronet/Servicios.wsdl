@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="autenticacionUsuario">
+        <s:complexType />
+      </s:element>
+      <s:element name="autenticacionUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autenticacionUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SeguridadToken" type="tns:SeguridadToken" />
+      <s:complexType name="SeguridadToken">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="stToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutenticacionToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ConsultaDeProductos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDeProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaDeProductosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDeUbicaciones">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultaDeUbicacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaDeUbicacionesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDeProveedores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCategoria" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDeProveedoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaDeProveedoresResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDeUsuarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultaDeUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaDeUsuariosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaTopSubsedes">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultaTopSubsedesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaTopSubsedesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaTopProductos">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultaTopProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaTopProductosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="autenticacionUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:autenticacionUsuario" />
+  </wsdl:message>
+  <wsdl:message name="autenticacionUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:autenticacionUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="autenticacionUsuarioSeguridadToken">
+    <wsdl:part name="SeguridadToken" element="tns:SeguridadToken" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaDeProductos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaDeProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeProductosSeguridadToken">
+    <wsdl:part name="SeguridadToken" element="tns:SeguridadToken" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeUbicacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaDeUbicaciones" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeUbicacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaDeUbicacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeUbicacionesSeguridadToken">
+    <wsdl:part name="SeguridadToken" element="tns:SeguridadToken" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeProveedoresSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaDeProveedores" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeProveedoresSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaDeProveedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeProveedoresSeguridadToken">
+    <wsdl:part name="SeguridadToken" element="tns:SeguridadToken" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaDeUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaDeUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDeUsuariosSeguridadToken">
+    <wsdl:part name="SeguridadToken" element="tns:SeguridadToken" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTopSubsedesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaTopSubsedes" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTopSubsedesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaTopSubsedesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTopSubsedesSeguridadToken">
+    <wsdl:part name="SeguridadToken" element="tns:SeguridadToken" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTopProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaTopProductos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTopProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaTopProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTopProductosSeguridadToken">
+    <wsdl:part name="SeguridadToken" element="tns:SeguridadToken" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosSoap">
+    <wsdl:operation name="autenticacionUsuario">
+      <wsdl:input message="tns:autenticacionUsuarioSoapIn" />
+      <wsdl:output message="tns:autenticacionUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeProductos">
+      <wsdl:input message="tns:ConsultaDeProductosSoapIn" />
+      <wsdl:output message="tns:ConsultaDeProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeUbicaciones">
+      <wsdl:input message="tns:ConsultaDeUbicacionesSoapIn" />
+      <wsdl:output message="tns:ConsultaDeUbicacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeProveedores">
+      <wsdl:input message="tns:ConsultaDeProveedoresSoapIn" />
+      <wsdl:output message="tns:ConsultaDeProveedoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeUsuarios">
+      <wsdl:input message="tns:ConsultaDeUsuariosSoapIn" />
+      <wsdl:output message="tns:ConsultaDeUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTopSubsedes">
+      <wsdl:input message="tns:ConsultaTopSubsedesSoapIn" />
+      <wsdl:output message="tns:ConsultaTopSubsedesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTopProductos">
+      <wsdl:input message="tns:ConsultaTopProductosSoapIn" />
+      <wsdl:output message="tns:ConsultaTopProductosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosSoap" type="tns:ServiciosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autenticacionUsuario">
+      <soap:operation soapAction="http://tempuri.org/autenticacionUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:autenticacionUsuarioSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeProductos">
+      <soap:operation soapAction="http://tempuri.org/ConsultaDeProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaDeProductosSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeUbicaciones">
+      <soap:operation soapAction="http://tempuri.org/ConsultaDeUbicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaDeUbicacionesSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeProveedores">
+      <soap:operation soapAction="http://tempuri.org/ConsultaDeProveedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaDeProveedoresSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeUsuarios">
+      <soap:operation soapAction="http://tempuri.org/ConsultaDeUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaDeUsuariosSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTopSubsedes">
+      <soap:operation soapAction="http://tempuri.org/ConsultaTopSubsedes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaTopSubsedesSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTopProductos">
+      <soap:operation soapAction="http://tempuri.org/ConsultaTopProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ConsultaTopProductosSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosSoap12" type="tns:ServiciosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="autenticacionUsuario">
+      <soap12:operation soapAction="http://tempuri.org/autenticacionUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:autenticacionUsuarioSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeProductos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaDeProductos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaDeProductosSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeUbicaciones">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaDeUbicaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaDeUbicacionesSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeProveedores">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaDeProveedores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaDeProveedoresSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaDeUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaDeUsuariosSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTopSubsedes">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaTopSubsedes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaTopSubsedesSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTopProductos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaTopProductos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ConsultaTopProductosSeguridadToken" part="SeguridadToken" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicios">
+    <wsdl:port name="ServiciosSoap" binding="tns:ServiciosSoap">
+      <soap:address location="http://ferronet.hopto.org/View/Servicios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosSoap12" binding="tns:ServiciosSoap12">
+      <soap12:address location="http://ferronet.hopto.org/View/Servicios.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

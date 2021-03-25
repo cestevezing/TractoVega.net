@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/View/MP_Principal.master" 
+    AutoEventWireup="true" CodeFile="~/Controller/MP_Visitante.master.cs" Inherits="View_Visitante_MasterPage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .auto-style11 {
+            width: 100%;
+        }
+        .auto-style12 {
+            width: 25%;
+            height: 37px;
+        }
+        .auto-style15 {
+        width: 25%;
+        height: 23px;
+            text-align: center;
+        }
+    .auto-style16 {
+        width: 50%;
+        height: 23px;
+            text-align: center;
+        }
+    .auto-style17 {
+        height: 23px;
+            text-align: center;
+        }
+        .auto-style18 {
+            width: 25%;
+            text-align: center;
+        }
+        .auto-style19 {
+            width: 50%;
+            height: 37px;
+            text-align: center;
+        }
+        .auto-style20 {
+            height: 37px;
+        }
+        .auto-style21 {
+            width: 50%;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <table class="auto-style11">
+        <tr>
+            <td class="auto-style12">
+                <asp:ImageButton ID="ImageButton1" runat="server" Height="25px" ImageUrl="~/Archivos/idioma.png" OnClick="ImageButton1_Click" Width="25px" />
+                <ajaxToolkit:AlwaysVisibleControlExtender ID="ImageButton1_AlwaysVisibleControlExtender" runat="server" HorizontalOffset="10" TargetControlID="ImageButton1" VerticalOffset="20" />
+            </td>
+            <td class="auto-style19">
+                <asp:Menu ID="Menu_Visitante" runat="server" Orientation="Horizontal" BackColor="#FF6600" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="X-Large" ForeColor="#990000" StaticSubMenuIndent="10px" >
+                    <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#FFFBD6" />
+                    <DynamicSelectedStyle BackColor="#FFCC66" />
+                    <Items>
+                        <asp:MenuItem Text="Inicio" Value="Inicio" NavigateUrl="~/View/Inicio_Visitante.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Empresa" Value="Empresa" NavigateUrl="~/View/Empresa_Visitante.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Catalogo" Value="Catalogo" NavigateUrl="~/View/Catalogo_Visitante.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Iniciar sesion" Value="IniciarSesion">
+                            <asp:MenuItem Text="Iniciar sesion" Value="Sesion" NavigateUrl="~/View/Login_Visitante.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Registrarse" Value="Registrar" NavigateUrl="~/View/Registro_Visitante.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#FFCC66" />
+                </asp:Menu>
+            </td>
+            <td class="auto-style20"></td>
+        </tr>
+        <tr>
+            <td class="auto-style18">
+                <asp:ImageButton ID="IB_Ferro" runat="server" Height="200px" OnClick="IB_Ferro_Click1" Width="200px"  />
+                <br />
+                <asp:LinkButton ID="LB_VerF" runat="server" ForeColor="#FF6600" OnClick="LB_VerF_Click" >Ver mas</asp:LinkButton>
+                <br />
+                <br />
+                <asp:ImageButton ID="IB_Compa" runat="server" Height="200px" OnClick="IB_Compa_Click1" Width="200px" />
+                <br />
+                <asp:LinkButton ID="LB_VerC" runat="server" ForeColor="#FF6600" OnClick="LB_VerC_Click">Ver mas</asp:LinkButton>
+            </td>
+            <td class="auto-style21">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="auto-style9">
+                <asp:ImageButton ID="IB_Ferro2" runat="server" Height="200px" OnClick="IB_Ferro2_Click" Width="200px"  />
+                <br />
+                <asp:LinkButton ID="LB_VerF2" runat="server" ForeColor="#FF6600" OnClick="LB_VerF2_Click" >Ver mas</asp:LinkButton>
+                <br />
+                <br />
+                <asp:ImageButton ID="IB_Compa2" runat="server" Height="200px" OnClick="IB_Compa2_Click" Width="200px"   />
+                <br />
+                <asp:LinkButton ID="LB_Ver" runat="server" ForeColor="#FF6600" OnClick="LB_Ver_Click" >Ver mas</asp:LinkButton>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style15">
+                <br />
+                <br />
+            </td>
+            <td class="auto-style16">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br />
+                <br />
+            </td>
+            <td class="auto-style17">
+                <br />
+                <br />
+            </td>
+        </tr>
+    </table>
+</asp:Content>
+

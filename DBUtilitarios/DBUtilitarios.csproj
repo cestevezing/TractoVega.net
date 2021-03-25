@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE352C47-9AD0-4201-A514-3DBE12F4E117}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DBUtilitarios</RootNamespace>
+    <AssemblyName>DBUtilitarios</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DUAuditoria.cs" />
+    <Compile Include="DUAuthentication.cs" />
+    <Compile Include="DUCategoria.cs" />
+    <Compile Include="DUCarrito.cs" />
+    <Compile Include="DUConexion.cs" />
+    <Compile Include="DUConfig.cs" />
+    <Compile Include="DUContacto.cs" />
+    <Compile Include="DUControles.cs" />
+    <Compile Include="DUCorreo.cs" />
+    <Compile Include="DUDetallesProducto.cs" />
+    <Compile Include="DUFormulario.cs" />
+    <Compile Include="DUIdioma.cs" />
+    <Compile Include="DUInicio.cs" />
+    <Compile Include="DULoggin.cs" />
+    <Compile Include="DUMac.cs" />
+    <Compile Include="DUMensajes.cs" />
+    <Compile Include="DUPedidos.cs" />
+    <Compile Include="DUPedidoProducto.cs" />
+    <Compile Include="DUProducto.cs" />
+    <Compile Include="DUProveedor.cs" />
+    <Compile Include="DUServicios.cs" />
+    <Compile Include="DUTokenRepureacionUsuario.cs" />
+    <Compile Include="DUUsuario.cs" />
+    <Compile Include="DUVistaCarritoUsuario.cs" />
+    <Compile Include="DUVistaDetallesPedido.cs" />
+    <Compile Include="DUVistaProductos.cs" />
+    <Compile Include="DUVistaReportePedido.cs" />
+    <Compile Include="DUVistaVentasMes.cs" />
+    <Compile Include="infoRepote_Pedido.cs">
+      <DependentUpon>infoRepote_Pedido.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="infoRepote_Pedido.Designer.cs">
+      <DependentUpon>infoRepote_Pedido.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DUConfirmarToken.cs" />
+    <Compile Include="DUUserToken.cs" />
+    <Compile Include="ViewCategoria.cs" />
+    <Compile Include="ViewProducto.cs" />
+    <Compile Include="ViewProveedor.cs" />
+    <Compile Include="ViewUsuario.cs" />
+    <Compile Include="WSProveedores.cs" />
+    <Compile Include="WSTopProductos.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="infoRepote_Pedido.xsc">
+      <DependentUpon>infoRepote_Pedido.xsd</DependentUpon>
+    </None>
+    <None Include="infoRepote_Pedido.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>infoRepote_Pedido.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="infoRepote_Pedido.xss">
+      <DependentUpon>infoRepote_Pedido.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

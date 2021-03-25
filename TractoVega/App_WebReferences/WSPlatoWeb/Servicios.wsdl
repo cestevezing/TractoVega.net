@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AutenticationUsuario">
+        <s:complexType />
+      </s:element>
+      <s:element name="AutenticationUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutenticationUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Seguridad" type="tns:Seguridad" />
+      <s:complexType name="Seguridad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="stToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutenticationToken" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="LMenu">
+        <s:complexType />
+      </s:element>
+      <s:element name="LMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LMenuResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Filtro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FiltroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FiltroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reserva">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hora" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReservaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReservaResult" type="tns:UReserva" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UReserva">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Dia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cant" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Puntos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_usuario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_plato" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_reserva" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="A" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="B" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contactenos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="detalle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContactenosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContactenosResult" type="tns:UUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UUser">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RolId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Session" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPostBack" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Detalle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ruta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ubicacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="X" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="User_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Puntos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_Rol" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="User_Name1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rclave" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ispos" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="A" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="B" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="C" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="D" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="E" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="F" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Ofertas">
+        <s:complexType />
+      </s:element>
+      <s:element name="OfertasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OfertasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TopPlatos">
+        <s:complexType />
+      </s:element>
+      <s:element name="TopPlatosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TopPlatosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AutenticationUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:AutenticationUsuario" />
+  </wsdl:message>
+  <wsdl:message name="AutenticationUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:AutenticationUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutenticationUsuarioSeguridad">
+    <wsdl:part name="Seguridad" element="tns:Seguridad" />
+  </wsdl:message>
+  <wsdl:message name="LMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:LMenu" />
+  </wsdl:message>
+  <wsdl:message name="LMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:LMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="LMenuSeguridad">
+    <wsdl:part name="Seguridad" element="tns:Seguridad" />
+  </wsdl:message>
+  <wsdl:message name="FiltroSoapIn">
+    <wsdl:part name="parameters" element="tns:Filtro" />
+  </wsdl:message>
+  <wsdl:message name="FiltroSoapOut">
+    <wsdl:part name="parameters" element="tns:FiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="FiltroSeguridad">
+    <wsdl:part name="Seguridad" element="tns:Seguridad" />
+  </wsdl:message>
+  <wsdl:message name="ReservaSoapIn">
+    <wsdl:part name="parameters" element="tns:Reserva" />
+  </wsdl:message>
+  <wsdl:message name="ReservaSoapOut">
+    <wsdl:part name="parameters" element="tns:ReservaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReservaSeguridad">
+    <wsdl:part name="Seguridad" element="tns:Seguridad" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSeguridad">
+    <wsdl:part name="Seguridad" element="tns:Seguridad" />
+  </wsdl:message>
+  <wsdl:message name="ContactenosSoapIn">
+    <wsdl:part name="parameters" element="tns:Contactenos" />
+  </wsdl:message>
+  <wsdl:message name="ContactenosSoapOut">
+    <wsdl:part name="parameters" element="tns:ContactenosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContactenosSeguridad">
+    <wsdl:part name="Seguridad" element="tns:Seguridad" />
+  </wsdl:message>
+  <wsdl:message name="OfertasSoapIn">
+    <wsdl:part name="parameters" element="tns:Ofertas" />
+  </wsdl:message>
+  <wsdl:message name="OfertasSoapOut">
+    <wsdl:part name="parameters" element="tns:OfertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="OfertasSeguridad">
+    <wsdl:part name="Seguridad" element="tns:Seguridad" />
+  </wsdl:message>
+  <wsdl:message name="TopPlatosSoapIn">
+    <wsdl:part name="parameters" element="tns:TopPlatos" />
+  </wsdl:message>
+  <wsdl:message name="TopPlatosSoapOut">
+    <wsdl:part name="parameters" element="tns:TopPlatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="TopPlatosSeguridad">
+    <wsdl:part name="Seguridad" element="tns:Seguridad" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosSoap">
+    <wsdl:operation name="AutenticationUsuario">
+      <wsdl:input message="tns:AutenticationUsuarioSoapIn" />
+      <wsdl:output message="tns:AutenticationUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LMenu">
+      <wsdl:input message="tns:LMenuSoapIn" />
+      <wsdl:output message="tns:LMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Filtro">
+      <wsdl:input message="tns:FiltroSoapIn" />
+      <wsdl:output message="tns:FiltroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reserva">
+      <wsdl:input message="tns:ReservaSoapIn" />
+      <wsdl:output message="tns:ReservaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contactenos">
+      <wsdl:input message="tns:ContactenosSoapIn" />
+      <wsdl:output message="tns:ContactenosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ofertas">
+      <wsdl:input message="tns:OfertasSoapIn" />
+      <wsdl:output message="tns:OfertasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TopPlatos">
+      <wsdl:input message="tns:TopPlatosSoapIn" />
+      <wsdl:output message="tns:TopPlatosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosSoap" type="tns:ServiciosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutenticationUsuario">
+      <soap:operation soapAction="http://tempuri.org/AutenticationUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AutenticationUsuarioSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LMenu">
+      <soap:operation soapAction="http://tempuri.org/LMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LMenuSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Filtro">
+      <soap:operation soapAction="http://tempuri.org/Filtro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:FiltroSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reserva">
+      <soap:operation soapAction="http://tempuri.org/Reserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ReservaSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoginSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contactenos">
+      <soap:operation soapAction="http://tempuri.org/Contactenos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ContactenosSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ofertas">
+      <soap:operation soapAction="http://tempuri.org/Ofertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:OfertasSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TopPlatos">
+      <soap:operation soapAction="http://tempuri.org/TopPlatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TopPlatosSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosSoap12" type="tns:ServiciosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutenticationUsuario">
+      <soap12:operation soapAction="http://tempuri.org/AutenticationUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AutenticationUsuarioSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LMenu">
+      <soap12:operation soapAction="http://tempuri.org/LMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LMenuSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Filtro">
+      <soap12:operation soapAction="http://tempuri.org/Filtro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:FiltroSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reserva">
+      <soap12:operation soapAction="http://tempuri.org/Reserva" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ReservaSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoginSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contactenos">
+      <soap12:operation soapAction="http://tempuri.org/Contactenos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ContactenosSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ofertas">
+      <soap12:operation soapAction="http://tempuri.org/Ofertas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:OfertasSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TopPlatos">
+      <soap12:operation soapAction="http://tempuri.org/TopPlatos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TopPlatosSeguridad" part="Seguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicios">
+    <wsdl:port name="ServiciosSoap" binding="tns:ServiciosSoap">
+      <soap:address location="http://platoweb.ddns.net/Servicios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosSoap12" binding="tns:ServiciosSoap12">
+      <soap12:address location="http://platoweb.ddns.net/Servicios.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

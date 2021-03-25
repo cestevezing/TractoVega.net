@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="TopComentarios">
+        <s:complexType />
+      </s:element>
+      <s:element name="TopComentariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TopComentariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Galeria">
+        <s:complexType />
+      </s:element>
+      <s:element name="GaleriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GaleriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Comentarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cedula" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComentariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComentariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Artistas">
+        <s:complexType />
+      </s:element>
+      <s:element name="ArtistasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ArtistasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GaleriaFiltro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cedula" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GaleriaFiltroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GaleriaFiltroResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TopComentariosSoapIn">
+    <wsdl:part name="parameters" element="tns:TopComentarios" />
+  </wsdl:message>
+  <wsdl:message name="TopComentariosSoapOut">
+    <wsdl:part name="parameters" element="tns:TopComentariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GaleriaSoapIn">
+    <wsdl:part name="parameters" element="tns:Galeria" />
+  </wsdl:message>
+  <wsdl:message name="GaleriaSoapOut">
+    <wsdl:part name="parameters" element="tns:GaleriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ComentariosSoapIn">
+    <wsdl:part name="parameters" element="tns:Comentarios" />
+  </wsdl:message>
+  <wsdl:message name="ComentariosSoapOut">
+    <wsdl:part name="parameters" element="tns:ComentariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ArtistasSoapIn">
+    <wsdl:part name="parameters" element="tns:Artistas" />
+  </wsdl:message>
+  <wsdl:message name="ArtistasSoapOut">
+    <wsdl:part name="parameters" element="tns:ArtistasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GaleriaFiltroSoapIn">
+    <wsdl:part name="parameters" element="tns:GaleriaFiltro" />
+  </wsdl:message>
+  <wsdl:message name="GaleriaFiltroSoapOut">
+    <wsdl:part name="parameters" element="tns:GaleriaFiltroResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="TopComentarios">
+      <wsdl:input message="tns:TopComentariosSoapIn" />
+      <wsdl:output message="tns:TopComentariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Galeria">
+      <wsdl:input message="tns:GaleriaSoapIn" />
+      <wsdl:output message="tns:GaleriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Comentarios">
+      <wsdl:input message="tns:ComentariosSoapIn" />
+      <wsdl:output message="tns:ComentariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Artistas">
+      <wsdl:input message="tns:ArtistasSoapIn" />
+      <wsdl:output message="tns:ArtistasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GaleriaFiltro">
+      <wsdl:input message="tns:GaleriaFiltroSoapIn" />
+      <wsdl:output message="tns:GaleriaFiltroSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TopComentarios">
+      <soap:operation soapAction="http://tempuri.org/TopComentarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Galeria">
+      <soap:operation soapAction="http://tempuri.org/Galeria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Comentarios">
+      <soap:operation soapAction="http://tempuri.org/Comentarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Artistas">
+      <soap:operation soapAction="http://tempuri.org/Artistas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GaleriaFiltro">
+      <soap:operation soapAction="http://tempuri.org/GaleriaFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TopComentarios">
+      <soap12:operation soapAction="http://tempuri.org/TopComentarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Galeria">
+      <soap12:operation soapAction="http://tempuri.org/Galeria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Comentarios">
+      <soap12:operation soapAction="http://tempuri.org/Comentarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Artistas">
+      <soap12:operation soapAction="http://tempuri.org/Artistas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GaleriaFiltro">
+      <soap12:operation soapAction="http://tempuri.org/GaleriaFiltro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://tattoostudio.gotdns.ch/Vista/WebService/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://tattoostudio.gotdns.ch/Vista/WebService/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

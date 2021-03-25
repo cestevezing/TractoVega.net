@@ -1,0 +1,6 @@
+C:\Users\Elliot\Desktop\TractoVega\DBUtilitarios\bin\Debug\DBUtilitarios.dll
+C:\Users\Elliot\Desktop\TractoVega\DBUtilitarios\bin\Debug\DBUtilitarios.pdb
+C:\Users\Elliot\Desktop\TractoVega\DBUtilitarios\obj\Debug\DBUtilitarios.csprojAssemblyReference.cache
+C:\Users\Elliot\Desktop\TractoVega\DBUtilitarios\obj\Debug\DBUtilitarios.csproj.CoreCompileInputs.cache
+C:\Users\Elliot\Desktop\TractoVega\DBUtilitarios\obj\Debug\DBUtilitarios.dll
+C:\Users\Elliot\Desktop\TractoVega\DBUtilitarios\obj\Debug\DBUtilitarios.pdb

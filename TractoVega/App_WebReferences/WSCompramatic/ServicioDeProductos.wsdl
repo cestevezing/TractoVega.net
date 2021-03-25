@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="traer_por_categoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_categoria" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="traer_por_categoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="traer_por_categoriaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clsSeguridad" type="tns:clsSeguridad" />
+      <s:complexType name="clsSeguridad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="stToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutenticacionToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nomEmp" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="traer_categorias_productos">
+        <s:complexType />
+      </s:element>
+      <s:element name="traer_categorias_productosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="traer_categorias_productosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutenticacionUsuario">
+        <s:complexType />
+      </s:element>
+      <s:element name="AutenticacionUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutenticacionUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="traer_por_categoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:traer_por_categoria" />
+  </wsdl:message>
+  <wsdl:message name="traer_por_categoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:traer_por_categoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="traer_por_categoriaclsSeguridad">
+    <wsdl:part name="clsSeguridad" element="tns:clsSeguridad" />
+  </wsdl:message>
+  <wsdl:message name="traer_categorias_productosSoapIn">
+    <wsdl:part name="parameters" element="tns:traer_categorias_productos" />
+  </wsdl:message>
+  <wsdl:message name="traer_categorias_productosSoapOut">
+    <wsdl:part name="parameters" element="tns:traer_categorias_productosResponse" />
+  </wsdl:message>
+  <wsdl:message name="traer_categorias_productosclsSeguridad">
+    <wsdl:part name="clsSeguridad" element="tns:clsSeguridad" />
+  </wsdl:message>
+  <wsdl:message name="AutenticacionUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:AutenticacionUsuario" />
+  </wsdl:message>
+  <wsdl:message name="AutenticacionUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:AutenticacionUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutenticacionUsuarioclsSeguridad">
+    <wsdl:part name="clsSeguridad" element="tns:clsSeguridad" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="traer_por_categoria">
+      <wsdl:input message="tns:traer_por_categoriaSoapIn" />
+      <wsdl:output message="tns:traer_por_categoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="traer_categorias_productos">
+      <wsdl:input message="tns:traer_categorias_productosSoapIn" />
+      <wsdl:output message="tns:traer_categorias_productosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutenticacionUsuario">
+      <wsdl:input message="tns:AutenticacionUsuarioSoapIn" />
+      <wsdl:output message="tns:AutenticacionUsuarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traer_por_categoria">
+      <soap:operation soapAction="http://tempuri.org/traer_por_categoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:traer_por_categoriaclsSeguridad" part="clsSeguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traer_categorias_productos">
+      <soap:operation soapAction="http://tempuri.org/traer_categorias_productos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:traer_categorias_productosclsSeguridad" part="clsSeguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticacionUsuario">
+      <soap:operation soapAction="http://tempuri.org/AutenticacionUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AutenticacionUsuarioclsSeguridad" part="clsSeguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traer_por_categoria">
+      <soap12:operation soapAction="http://tempuri.org/traer_por_categoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:traer_por_categoriaclsSeguridad" part="clsSeguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traer_categorias_productos">
+      <soap12:operation soapAction="http://tempuri.org/traer_categorias_productos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:traer_categorias_productosclsSeguridad" part="clsSeguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticacionUsuario">
+      <soap12:operation soapAction="http://tempuri.org/AutenticacionUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AutenticacionUsuarioclsSeguridad" part="clsSeguridad" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://compramatic.hopto.org:88/ServicioDeProductos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://compramatic.hopto.org:88/ServicioDeProductos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

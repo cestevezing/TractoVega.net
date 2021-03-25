@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TractoVega", "TractoVega\", "{0FF1DC11-C17F-4FDF-9116-36C8C4D2537B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = ""
+		Debug.AspNetCompiler.VirtualPath = "/localhost_61349"
+		Debug.AspNetCompiler.PhysicalPath = "TractoVega\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61349\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_61349"
+		Release.AspNetCompiler.PhysicalPath = "TractoVega\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61349\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "61349"
+		SlnRelativePath = "TractoVega\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBData", "DAOData\DBData.csproj", "{CE03B912-D29E-4ECF-AD2F-12D3E120C639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUtilitarios", "DBUtilitarios\DBUtilitarios.csproj", "{AE352C47-9AD0-4201-A514-3DBE12F4E117}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLogica", "DBLogica\DBLogica.csproj", "{57E6DF35-12A8-4DF5-BD4D-9AD73E6D3F0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FF1DC11-C17F-4FDF-9116-36C8C4D2537B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF1DC11-C17F-4FDF-9116-36C8C4D2537B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF1DC11-C17F-4FDF-9116-36C8C4D2537B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF1DC11-C17F-4FDF-9116-36C8C4D2537B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CE03B912-D29E-4ECF-AD2F-12D3E120C639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE03B912-D29E-4ECF-AD2F-12D3E120C639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE03B912-D29E-4ECF-AD2F-12D3E120C639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE03B912-D29E-4ECF-AD2F-12D3E120C639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE352C47-9AD0-4201-A514-3DBE12F4E117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE352C47-9AD0-4201-A514-3DBE12F4E117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE352C47-9AD0-4201-A514-3DBE12F4E117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE352C47-9AD0-4201-A514-3DBE12F4E117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E6DF35-12A8-4DF5-BD4D-9AD73E6D3F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E6DF35-12A8-4DF5-BD4D-9AD73E6D3F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E6DF35-12A8-4DF5-BD4D-9AD73E6D3F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E6DF35-12A8-4DF5-BD4D-9AD73E6D3F0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {819D6EAB-B0A4-4C23-85D9-C19923BDC5F0}
+	EndGlobalSection
+EndGlobal

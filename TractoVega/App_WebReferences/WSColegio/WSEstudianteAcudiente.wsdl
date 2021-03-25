@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AutenticacionUsuario">
+        <s:complexType />
+      </s:element>
+      <s:element name="AutenticacionUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutenticacionUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clsSeguridadEstudianteAcu" type="tns:clsSeguridadEstudianteAcu" />
+      <s:complexType name="clsSeguridadEstudianteAcu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="stToken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutenticacionToken" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="listaEstudianteAcudiente">
+        <s:complexType />
+      </s:element>
+      <s:element name="listaEstudianteAcudienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listaEstudianteAcudienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AutenticacionUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:AutenticacionUsuario" />
+  </wsdl:message>
+  <wsdl:message name="AutenticacionUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:AutenticacionUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutenticacionUsuarioclsSeguridadEstudianteAcu">
+    <wsdl:part name="clsSeguridadEstudianteAcu" element="tns:clsSeguridadEstudianteAcu" />
+  </wsdl:message>
+  <wsdl:message name="listaEstudianteAcudienteSoapIn">
+    <wsdl:part name="parameters" element="tns:listaEstudianteAcudiente" />
+  </wsdl:message>
+  <wsdl:message name="listaEstudianteAcudienteSoapOut">
+    <wsdl:part name="parameters" element="tns:listaEstudianteAcudienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSEstudianteAcudienteSoap">
+    <wsdl:operation name="AutenticacionUsuario">
+      <wsdl:input message="tns:AutenticacionUsuarioSoapIn" />
+      <wsdl:output message="tns:AutenticacionUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listaEstudianteAcudiente">
+      <wsdl:input message="tns:listaEstudianteAcudienteSoapIn" />
+      <wsdl:output message="tns:listaEstudianteAcudienteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSEstudianteAcudienteSoap" type="tns:WSEstudianteAcudienteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutenticacionUsuario">
+      <soap:operation soapAction="http://tempuri.org/AutenticacionUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AutenticacionUsuarioclsSeguridadEstudianteAcu" part="clsSeguridadEstudianteAcu" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaEstudianteAcudiente">
+      <soap:operation soapAction="http://tempuri.org/listaEstudianteAcudiente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSEstudianteAcudienteSoap12" type="tns:WSEstudianteAcudienteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutenticacionUsuario">
+      <soap12:operation soapAction="http://tempuri.org/AutenticacionUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AutenticacionUsuarioclsSeguridadEstudianteAcu" part="clsSeguridadEstudianteAcu" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listaEstudianteAcudiente">
+      <soap12:operation soapAction="http://tempuri.org/listaEstudianteAcudiente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSEstudianteAcudiente">
+    <wsdl:port name="WSEstudianteAcudienteSoap" binding="tns:WSEstudianteAcudienteSoap">
+      <soap:address location="http://colegio-leon.ddns.net/WebServices/WSEstudianteAcudiente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSEstudianteAcudienteSoap12" binding="tns:WSEstudianteAcudienteSoap12">
+      <soap12:address location="http://colegio-leon.ddns.net/WebServices/WSEstudianteAcudiente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
